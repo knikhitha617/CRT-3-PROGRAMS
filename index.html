@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> Registration Form</title>
+<link rel="stylesheet" href="style.css">
+<style>
+body{
+    font-family: Arial;
+    background-color: #f2f2f2;
+}
+
+.container{
+    width: 400px;
+    background: white;
+    margin: 80px auto;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px gray;
+}
+
+h2{
+    text-align:center;
+}
+
+input, select{
+    width:100%;
+    padding:10px;
+    margin:8px 0;
+}
+
+button{
+    width:100%;
+    padding:10px;
+    background:#4CAF50;
+    color:white;
+    border:none;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#45a049;
+}
+
+.gender{
+    width:auto;
+}
+</style>
+
+<script>
+function validateForm() {
+
+let password = document.getElementById("password").value;
+let confirm = document.getElementById("confirm").value;
+
+if(password !== confirm){
+alert("Passwords do not match!");
+return false;
+}
+
+return true;
+}
+</script>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Student Registration</h2>
+
+<form onsubmit="return validateForm()">
+
+<label>Name</label>
+<input type="text" placeholder="Enter your name" required>
+
+<label>Email</label>
+<input type="email" placeholder="Enter your email" required>
+
+<label>Password</label>
+<input type="password" id="password" placeholder="Enter password" required>
+
+<label>Confirm Password</label>
+<input type="password" id="confirm" placeholder="Confirm password" required>
+
+<label>Gender</label><br>
+<input type="radio" name="gender" class="gender"> Male
+<input type="radio" name="gender" class="gender"> Female
+<input type="radio" name="gender" class="gender"> Other
+<br><br>
+
+<label>Select Course</label>
+<select required>
+<option value="">--Select Course--</option>
+<option>BBA</option>
+<option>BCA</option>
+<option>B.Tech</option>
+<option>MBA</option>
+</select>
+
+<button type="submit">Register</button>
+
+</form>
+
+</div>
+
+</body>
+</html>
